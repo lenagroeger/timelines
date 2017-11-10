@@ -1,0 +1,209 @@
+
+
+  #container {
+    line-height: 1.6;
+    text-align: left;
+    line-height: 1.5;
+    margin:0px auto;
+    padding:0;
+    font-family: Helvetica, sans-serif;
+    width: 1000px
+  }
+
+  #container p code {
+    margin: 0 2px;
+    padding: 0px 5px;
+    border: 1px solid #ebebeb;
+    background-color: #f7f7f7;
+    border-radius: 2px;
+    font-family: Monaco, Courier, monospace;
+    font-size: 12px;
+    color:black;
+  }
+
+#contact {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid #cecece
+}
+#container pre code {
+  font-family: Monaco, Courier, monospace;
+  font-size: 12px;
+}
+
+  #container pre {
+    line-height: 16px;
+    padding: 0.5em 1em;
+    overflow: auto;
+    border-left: 1px solid #cecece;
+    margin-left: 0;
+    background: #f7f7f7;
+}
+
+  /*#content a {
+    color: #0193a4;
+    text-decoration: none;
+  }*/
+
+  #content a:hover {
+    text-decoration: underline;
+  }
+
+  a {
+    color: #c66402;
+    text-decoration: none;
+  }
+
+  .nav a:hover {
+      color: #444;
+  }
+
+  p {
+    color: #444;
+    margin: 0 0 15px;
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+  h1 {
+    font-size: 75px;
+    color: #c66402;
+    margin: 35px 0px 5px 0px;
+  }
+
+
+  h2 {
+    font-size: 30px;
+    margin: 60px 0px 10px 0px;
+    color: #444;
+  }
+
+  .starred {
+  font-size: 25px;
+  position: relative;
+  top:5px;
+  color:#c66402;
+}
+
+.starred.big-star {
+  top:-7px;
+  font-size: 30px;
+}
+
+
+  h3 {
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  p.talkers {
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+
+
+  .nav {
+    float: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 140px;
+    text-align: right;
+    padding: 60px 10px;
+    line-height: 2em;
+    position: fixed;
+  }
+
+  #content > div {
+    width: 800px;
+    padding:1px 0px;
+    clear: both
+  }
+
+  #content > div img, #content > div .gist {
+    max-width: 100%;
+    box-shadow: 1px 1px 10px #cecece;
+    margin-bottom:10px;
+
+  }
+  .timeline-examples p {
+    margin:10px 0px 50px;
+    font-weight: 200;
+
+  }
+/*  #content > div img {
+     width: 100%;
+  }*/
+  #content > div > span {
+    margin: 40px 0px 20px;
+    display: block;
+    width: 100%
+  }
+
+  #content .gist span, #content .gist div {
+    font-size: 11px;
+    line-height: 1em
+  }
+
+  #content {
+    float:right;
+    margin-bottom: 50px;
+  }
+
+  .nav li {
+    list-style-type: none;
+    font-size: 11px
+  }
+
+  .nav ul {
+    margin: 0px;
+    padding-left: 0px
+  }
+
+  .active {
+    font-weight: bold
+  }
+
+
+
+
+
+  li {
+    font-size: 15px;
+  }
+
+
+  @media (max-width:480px) {
+
+    body {
+      margin-top:0px;
+    }
+
+
+    #container {
+      width: 480px;
+    }
+
+    #content {
+      float:left;
+      margin: 40px 20px
+    }
+
+
+    .nav {
+      width: 400px;
+      padding:20px;
+      background: white
+    }
+
+    .nav li {
+      float: left;
+      margin-right: 20px;
+    }
+
+    #content > div {
+      width: 400px
+    }
+
+
+  }

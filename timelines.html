@@ -1,0 +1,322 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Making Timelines</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="http://lenagroeger.s3.amazonaws.com/talks/common/scrollyfixiestuff.js"></script>
+    <link rel="stylesheet" href="timeline2.css" type="text/css">
+  </head>
+
+  <body>
+
+<!-- Sisi's MIA timeline
+  http://projects.propublica.org/graphics/mia-letters
+
+NYTimes history of computing
+http://www.nytimes.com/interactive/2011/12/06/science/20111206-technology-timeline.html
+
+Women in the senate
+http://www.nytimes.com/interactive/2013/03/22/us/politics/women-in-the-senate.html
+ -->
+
+  <div id="container">
+
+    <div class="nav">
+      <ul>
+      <li class="intro-nav"><a href="#intro">Time as a line</a></li>
+      <li class="timelinegoals-nav"><a href="#timelinegoals">What's it all for?</a></li>
+      <li class="timelinejs-nav"><a href="#timelinejs">TimelineJS</a></li>
+      <li class="vtimeline-nav"><a href="#vtimeline">Vertical Timeline</a></li>
+      <li class="tiktok-nav"><a href="#tiktok">Tik Tok</a></li>
+      <li class="setter-nav"><a href="#setter">TimelineSetter</a></li>
+      <li class="curator-nav"><a href="#curator">TimelineCurator</a></li>
+      <li class="other-nav"><a href="#other">Other Tools</a></li>
+
+
+      </ul>
+    </div>
+
+
+    <div id="content" >
+      <h1> Making Timelines</h1>
+      <p class="talkers">Fall 2015, <a target="_blank" href="https://twitter.com/lenagroeger">Lena Groeger</a></p>
+
+      <div id="intro" class="section">
+        <h2>What does history look like? How do you draw time? </h2>
+
+        <p>Lots of people have come up with solutions to this problem. Many of them involve lines. </p>
+
+      <div class="timeline-examples">
+
+        <a target="_blank" href="img/firsttimeline.jpg"><img src="img/firsttimeline.jpg"/></a>
+        <p>Some say this is one of the first timelines. </p>
+
+
+ <a target="_blank" href="img/worldhistorychart.jpg"><img src="img/worldhistorychart.jpg"/></a>
+    <p>Lines can show everything ever ever ever since the beginning of humankind.</p>
+
+
+        <a target="_blank" href="img/spacetimecontinuum.jpg"><img src="img/spacetimecontinuum.jpg"/></a>
+        <p>Or they can be quite simple.</p>
+
+<!--         <a target="_blank" href="img/Back_to_the_Future_Timeline.jpg">
+        <img src="img/Back_to_the_Future_Timeline.jpg"/></a>
+        <p>Sometimes it takes a few more lines to do the job.</p> -->
+
+        <a target="_blank" href="img/DRIVINGtimeline.jpg"><img src="img/DRIVINGtimeline.jpg"/></a>
+        <p>Lines can tell a history. </p>
+
+        <a target="_blank" href="img/stories_of_the_past_and_future_large.png"><img src="img/stories_of_the_past_and_future_large.png"/></a>
+        <p>Lines on a grid can map out a complicated landscape. </p>
+
+        <a target="_blank" href="img/1932-1970.jpg"><img src="img/1932-1970.jpg"/></a>
+          <p>Lines can express an opinion.</p>
+
+        <a target="_blank" href="img/soiltimeline.jpg"><img src="img/soiltimeline.jpg" style="width:200px"/></a>
+          <p>Or show a natural phenomenon. </p>
+
+        <a target="_blank" href="img/treeringtimeline2.jpg"><img src="img/treeringtimeline2.jpg"/></a>
+        <p>Lines can put events onto a scale.</p>
+
+        <a target="_blank" href="img/circlehistoryworld.jpg"><img src="img/circlehistoryworld.jpg"/></a>
+        <p>Lines can show us cycles and continuity.</p>
+
+
+        <a target="_blank" href="img/movie_narrative_charts_large.png"><img src="img/movie_narrative_charts_large.png"/></a>
+        <p>Lines can show interactions.</p>
+
+        <a target="_blank" href="img/LongNowDiag.jpg"><img src="img/LongNowDiag.jpg"/></a>
+          <p>Or they can express an abstract concept.</p>
+        <a target="_blank" href="img/rock_and_roll_history.png"><img src="img/rock_and_roll_history.png"/></a>
+        <p>Lines can show evolution and change.</p>
+
+
+     <a target="_blank" href="http://www.nytimes.com/interactive/2011/12/06/science/20111206-technology-timeline.html"><img src="img/futurecomputing.jpg"/></a>
+       <p>Lines can (maybe?) help us predict the future.</p>
+
+
+
+
+  <a target="_blank" href="img/mobiletimelines.jpg"><img src="img/mobiletimelines.jpg"/></a>
+       <p>They can help us get places or plan our day.</p>
+
+
+  <a target="_blank" href="http://www.nytimes.com/interactive/2013/03/22/us/politics/women-in-the-senate.html"><img src="img/womensenate.jpg"/></a>
+       <p>Lines can point out inequalities.</p>
+
+
+        </div>
+      </div>
+
+
+
+      <div id="timelinegoals" class="section">
+        <h2>So how can timelines help us tell news stories?</h2>
+        <p><strong>They can clearly show how your story unfolds event by event.</strong></p>
+        <p>The New York Times did this with the 9/11 audio tapes. Their presentation included a vertical timeline on the left that is synced with audio files, an accompanying transcript and a map showing the planes' flight paths on the right.</p>
+        <span><a target="_blank" href="http://www.nytimes.com/interactive/2011/09/08/nyregion/911-tapes.html"><img src="img/nytimes_911tapes_timeline.png"></a></span>
+
+
+<br></br>
+        <p><strong>They can show the near and the far.</strong></p>
+        <p>ProPublica created a timeline of letters sent from a POW in the Philippines during World War II, whose remains were never recovered. The top line represents the big picture, the dates of all the documents associated with his case, and the rest of the page gives you details about those specific letters, photos, and written pieces.</p>
+<!--
+       <span><a target="_blank" href="http://www.nytimes.com/interactive/2013/01/18/world/africa/mali-algeria-timeline.html#/#time231_6940"><img src="img/saharatimeline.jpg"/></a></span>
+ -->
+
+     <span><a target="_blank" href="http://projects.propublica.org/graphics/mia-letters"><img src="img/budsrecords.jpg"/></a></span>
+
+
+<br></br>
+
+
+
+<!--         <p>California Watch used a timeline to go behins the scenes and explain how its investigation into structural problems in California public schools unfolded. The timeline is horizontal, with multimedia and a constantly updating document counter.</p>
+        <span><a target="_blank" href="http://californiawatch.org/node/6741"><img src="img/californiawatch_onshakyground.png"></a></span> -->
+
+        <p><strong>Timelines can orient readers in time by linking up events in your story with more well-known events.</strong></p>
+        <p>For ProPublica's investigation into Memorial Medical Center after Hurricane Katrina, they paired events that received a lot of news coverage in Katrina's aftermath with the tick-tock of events unfolding inside Memorial Medical Center.</p>
+        <span><a target="_blank" href="http://www.propublica.org/special/timeline-katrina-and-its-aftermath"><img src="img/katrina_memorialmedicalcenter_timeline.png"></a></span>
+
+<br></br>
+
+        <p><strong>Timelines can provide readers with a history of the story's subject, a sort of roadmap of how we got here.</strong></p>
+        <p>For ProPublica's investigation into presidential pardons, they paired notable pardons with a chart showing pardons granted per year.</p>
+        <span><a target="_blank" href="http://www.propublica.org/special/timeline-a-history-of-pardons"><img src="img/uspardons_history.png"></a></span>
+
+<br></br>
+
+        <p><strong>Timelines can show trends.</strong></p>
+        <p>For a story about changing regulations on fracking, ProPublica created a timeline grid, shading each box depending on whether it supported or limited hydraulic fracturing.</p>
+        <span><a target="_blank" href="http://www.propublica.org/special/from-gung-ho-to-uh-oh-charting-the-governments-moves-on-fracking"><img src="img/gungho.jpg"></a></span>
+
+      </div>
+
+      <div>
+        <h2>So how do I make my own timelines? </h2>
+        <p>There are many ways. Here are just a few free tools you can use to help. None of them require more than a spreadsheet and (at most!) a few lines of code.</p>
+      </div>
+
+      <div id="timelinejs" class="section">
+
+
+        <h2>TimelineJS</h2>
+
+        <p><a target="_blank" href="http://timeline.verite.co/">TimelineJS</a> takes a more slideshow approach to timelines. It's got a navigation element on the bottom, and room for large photos and big quotes. You can embed pretty much whatever you want: videos, Flickr photos, tweets, etc. Here's a sample of what TimelineJS looks like: </p>
+
+        <span><img src="img/timelinejs_example.jpg"></span>
+
+        <p>And a couple more:</p>
+        <ul>
+          <li><a target="_blank" href="http://backtoghana.com/timeline">History of Ghana</a></li>
+          <li><a target="_blank" href="http://timeline.verite.co/examples/republican/">The Republican Round Up</a></li>
+          <li><a target="_blank" href="http://timeline.verite.co/examples/user-interface/">Revolutionary User Interfaces</a></li>
+        </ul>
+
+        <p>All you need to start with Timeline JS is a Google Spreadsheet. Here's the <a target="_blank" href="https://drive.google.com/previewtemplate?id=1pHBvXN7nmGkiG8uQSUB82eNlnL8xHu6kydzH_-eguHQ&mode=public">TimelineJS Google Spreadsheet template</a>, and here's an example: </p>
+        <span><a target="_blank" href="https://drive.google.com/previewtemplate?id=0AppSVxABhnltdEhzQjQ4MlpOaldjTmZLclQxQWFTOUE&mode=public"><img src="img/timelinejs_spreadsheet.jpg"></a></span>
+
+
+        <p>Just make sure you "Publish to the Web" like it says on <a target="_blank" href="http://timeline.verite.co/#fileformat">the TimelineJS site</a>:</p>
+        <span><img src="img/timelinejs_instructions.jpg"></span>
+
+        <p>Then stick the url to your own Goodle Spreadsheet (find it by going to File > Publish to the Web, and copying the link at the bottom) into <a target="_blank" href="http://timeline.verite.co/#embed">the site's own embed code generator</a>, and you can preview your timeline right there, and adjust accordingly.</p>
+        <span><img src="img/timelinejs_embedpreview.jpg"></span>
+
+        <p>If you want a little more control, you can follow the directions on the <a target="_blank" href="https://github.com/NUKnightLab/TimelineJS3">TimelineJS3 GitHub page</a> and paste this embed code right into your page. Here you can set the same options (like height, width, font, etc) as well as link to your own styles or additional javascript files.  </p>
+        <span><script src="https://gist.github.com/lenagroeger/739dc5839863209cddbd.js"></script></span>
+
+      </div>
+
+
+
+      <div id="vtimeline" class="section">
+        <h2>Vertical Timeline</h2>
+
+
+        <p> <a target="_blank" href="http://johnkeefe.net/the-thinking-behind-wnycs-new-vertical-timeli">WNYC's Vertical Timeline</a> uses a more Facebook style approach to show events over time. Here's an example: </p>
+        <span><a target="_blank" href="http://builtbybalance.com/github-timeline/"><img src="img/verticaltimeline_example.jpg"></a></span>
+
+        <p> And another one: <a target="_blank" href="http://www.wnyc.org/blogs/empire/2012/may/07/timeline-pedro-espadas-long-dance-law/">Pedro Espada's Long Dance with the Law</a></p>
+
+        <p> All you need is a <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0Al2vbsd4zHJbdFNRaFBuMjNWTUNHenFhdTR2elYxMUE#gid=0">Google spreadsheet</a>, formatted like this: </p>
+        <span><a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0Al2vbsd4zHJbdFNRaFBuMjNWTUNHenFhdTR2elYxMUE#gid=0"><img src="img/verticaltimeline_spreadsheet.jpg"/></a></span>
+        <p> Here's <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0Al2vbsd4zHJbdFNRaFBuMjNWTUNHenFhdTR2elYxMUE#gid=0">WNYC's Google Spreadsheet template.</a> </p>
+
+        <p> You'll need to include several javascript files in your page for the timeline to work. You can download them all from the <a target="_blank" href="https://github.com/balancemedia/Timeline/tree/master/js">Vertical Timeline GitHub page</a>. To link your own Google spreadsheet to the timeline, all you do is paste the key to your spreadsheet at the beginning your script.js file. You can get that key by going to File > Publish to the Web, copying the part between the <code>key=</code> and <code>&amp;</code> from the link at the bottom.</p>
+
+         <span><script src="https://gist.github.com/lenagroeger/5026625.js"></script></span>
+
+        <p> Vertical Timeline uses a couple of handy libraries including <a target="_blank" href="https://github.com/jsoma/tabletop">Tabletop.js</a> to hook up your Google Spreadsheet, <a target="_blank" href="http://handlebarsjs.com/">Handlebars.js</a> for templating, and <a target="_blank" href="http://isotope.metafizzy.co/">Isotope.js</a> to filter or sort the events (and get those very cool transitions). Here's an example of what the code looks like for the sample timeline we pictured above: </p>
+        <span><script src="https://gist.github.com/lenagroeger/5014929.js"></script></span>
+      </div>
+
+
+
+      <div id="tiktok" class="section">
+        <h2>Tik Tok</h2>
+
+       <p><a href="http://datanews.github.io/tik-tok/">Tik Tok</a> is the newest timeline tool from the data/interactive team at WNYC. They call it "a Javascript tool to easily create beautiful, simple, mobile-friendly, vertical timelines." It's basically a snazzier version of the Vertical Timeline tool.</p>
+
+       <p><span><a target="_blank" href="http://datanews.github.io/tik-tok/"><img src="img/tiktok.jpg"></a></span></p>
+
+        <p>They've written up <a href="https://source.opennews.org/en-US/articles/beautiful-timelines-easy-way-tik-tok/">an longer introduction here </a>, but the code is pretty straightforward.</p>
+
+        <p>Here's all the HTML you need to get started:
+
+          <span><script src="https://gist.github.com/lenagroeger/518bf632445eb6a4f394.js"></script></span></p>
+          <br>
+
+          <p>And the Javascript, taken straight from their example:
+           <span><script src="https://gist.github.com/lenagroeger/28cb1d61d9aa47ef03c9.js"></script></span></p>
+
+          <p>Simple enough, right?</p>
+
+
+
+
+      </div>
+
+      <div id="setter" class="section">
+        <h2>TimelineSetter</h2>
+
+        <p><a target="_blank" href="http://propublica.github.com/timeline-setter/">ProPublica's TimelineSetter</a> takes a slideshow approach with a navigation bar on top to show the series of events in the timeline at a glance and "cards" below that can be customized to include multiple sources of media, including photos, slideshows of photos, videos, maps, document embeds, etc. It can also handle multiple parallel event series on the same timeline. Here's an example:</p>
+
+        <span><img src="img/timelinesetter_example.png"></span>
+
+        <p>And a couple more:</p>
+        <ul>
+          <li><a target="_blank" href="http://www.huffingtonpost.com/2011/09/09/ground-zero-world-trade-center-freedom-tower_n_955845.html">From Ground Zero To The World Trade Center</a></li>
+          <li><a target="_blank" href="http://www.propublica.org/special/timeline-a-history-of-red-cross-blood-penalties">A History of Red Cross Blood Penalties</a></li>
+          <li><a target="_blank" href="http://www.pbs.org/newshour/timeline/uprising/">Arab Awakening</a></li>
+        </ul>
+
+        <p>To get started, organize your timeline's events according to the following example spreadsheet with headers for date, display_date, description, link, series and html.</p>
+
+        <span><img src="img/timelinesetter_spreadsheet_example.png"></span>
+
+        <p>Save the spreadsheet as a .csv file. And then run the following line of code in your terminal, inserting the path to your .csv file after -c and the path to where you want the timeline and assets to be outputted to after -o.</p>
+
+        <pre><code>timeline-setter -c /path/to/data.csv -o /path/to/output/directory</code></pre>
+
+        <p> for example, here's what it would look like if you put a csv file into a a folder on your Desktop:</p>
+
+        <pre><code> timeline-setter -c /Users/lgroeger/Desktop/timeline_test/timeline_data.csv -o /Users/lgroeger/Desktop/timeline_test/</code></pre>
+
+        <p>And voila! Your timeline is ready to be embedded. For more ways to customize the appearance of your timeline, check out <a target="_blank" href="http://propublica.github.com/timeline-setter/">ProPublica's Github write-up</a>.</p>
+
+        <p>If you want to make a TimelineSetter timeline with some sample data, you can <a target="_blank" href="timeline_data.csv">download the csv file</a> that we used for <a target="_blank" href="http://www.propublica.org/special/a-history-of-fda-inaction-on-animal-antibiotics">a timeline on the widespread use of animal antibiotics</a> and the FDA's lack of regulation.</p>
+
+        <p>Once you download the file, put it into a folder and then run the above command, substituting your own path for the one given. A bunch of new files should be generated right into that folder, including one called timeline.html. Open that up in a browser, and you should see the FDA timeline.</p>
+
+        <p>If you want, you can <a target="_blank" href="timeline_test.zip">download a sample folder</a> with all the finished files of a TimelineSetter timeline, to see what you should end up with.</p>
+
+         <p>Feel free to play around with the styles, substitute your own photos or videos or anything else. </p>
+
+</div>
+
+
+      <div id="curator" class="section">
+        <h2>TimeLineCurator</h2>
+
+        <p>I've never used it, but <a href="http://www.cs.ubc.ca/group/infovis/software/TimeLineCurator/">TimelineCurator</a> is a tool created by the <a href="http://www.cs.ubc.ca/group/infovis/">UBC InfoVis Group</a> that extracts the dates from freeform text and generates a timeline. </p>
+
+        <span><img src="img/curator.jpg"></span>
+
+        <p>Here's their description of the tool: <em>TimeLineCurator quickly and automatically extracts temporal references in freeform text to generate a visual timeline. You can then interactively curate the events in this timeline until you are satisfied, or quickly decide that there is no interesting temporal structure within the document. You can also create a mashup of multiple documents against each other to compare their temporal structure.</em></p>
+
+
+      </div>
+
+      <div id="other" class="section">
+
+        <h2>Other Tools </h2>
+        <p>These are not all timeline tools per se, but can be used to create time-series based stories.</p>
+
+        <p><a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a>, a way to "mix written narrative, multimedia, and map based interaction into a beautiful map driven story."</p>
+
+        <p><a href="http://storymap.knightlab.com/">StoryMap JS</a>, a "free tool to help you tell stories on the web that highlight the locations of a series of events."</p>
+
+        <p><a href="http://timemapper.okfnlabs.org/">TimeMapper</a>, another tool built on top of Timeline.js with additional features for mapping events to a map display. </p>
+
+        <p>Know of any other timeline tools? Let me know <a href="https://twitter.com/lenagroeger">@lenagroeger</a>. </p>
+
+      </div>
+
+
+      <div id="contact" class="section">
+        <br>
+
+        <p id="starred-note">Note: Many examples come from <a href="http://www.amazon.com/Cartographies-Time-A-History-Timeline/dp/1616890584">Cartographies of Time: A History of the Timeline</a>, a great resource on the history of graphic representations of time.</p>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+  </body>
+
+</html>
